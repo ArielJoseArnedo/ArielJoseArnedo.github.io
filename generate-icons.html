@@ -1,0 +1,52 @@
+<!-- Icon Generator for PWA -->
+<!-- This is a simple HTML file to generate placeholder icons -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Icon Generator</title>
+</head>
+<body>
+    <canvas id="canvas" width="512" height="512" style="border: 1px solid #ccc;"></canvas>
+    
+    <script>
+        function generateIcon(size, filename) {
+            const canvas = document.getElementById('canvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Set canvas size
+            canvas.width = size;
+            canvas.height = size;
+            
+            // Create gradient background
+            const gradient = ctx.createLinearGradient(0, 0, size, size);
+            gradient.addColorStop(0, '#667eea');
+            gradient.addColorStop(1, '#764ba2');
+            
+            // Fill background
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, size, size);
+            
+            // Add initials
+            ctx.fillStyle = 'white';
+            ctx.font = `bold ${size * 0.3}px Inter, Arial, sans-serif`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('AA', size / 2, size / 2);
+            
+            // Download the icon
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+        
+        // Generate all required icon sizes
+        const sizes = [72, 96, 128, 144, 152, 192, 384, 512];
+        sizes.forEach(size => {
+            setTimeout(() => {
+                generateIcon(size, `icon-${size}x${size}.png`);
+            }, size * 10); // Delay to prevent browser blocking
+        });
+    </script>
+</body>
+</html>

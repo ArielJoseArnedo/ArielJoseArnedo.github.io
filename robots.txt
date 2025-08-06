@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://tu-dominio.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Disallow specific files
+Disallow: /generate-icons.html
+Disallow: /*.svg$
