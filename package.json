@@ -1,0 +1,43 @@
+{
+  "name": "ariel-arnedo-cv",
+  "version": "1.0.0",
+  "description": "PWA Portafolio profesional de Ariel Arnedo - Sr Software Developer",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000 || python -m http.server 8000",
+    "serve": "npx http-server -p 8000 -c-1",
+    "build": "echo 'No build process needed for static PWA'",
+    "test": "npx lighthouse http://localhost:8000 --output html --output-path lighthouse-report.html",
+    "validate": "npx html-validate index.html",
+    "icons": "open icon-generator.html"
+  },
+  "keywords": [
+    "pwa",
+    "portfolio",
+    "cv",
+    "resume",
+    "ariel-arnedo",
+    "software-developer",
+    "progressive-web-app"
+  ],
+  "author": "Ariel Arnedo <ariel_arnedo@outlook.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arielarnedo/cv-pwa"
+  },
+  "homepage": "https://arielarnedo.github.io/cv-pwa",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "lighthouse": "^11.0.0",
+    "html-validate": "^8.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 1%",
+    "not dead"
+  ]
+}

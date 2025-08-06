@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crear Icono PWA</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        canvas { border: 1px solid #ccc; margin: 20px 0; }
+        button { padding: 10px 20px; margin: 5px; font-size: 16px; cursor: pointer; }
+        .download-section { margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <h1>Generador de Iconos PWA - Ariel Arnedo</h1>
+    <p>Este generador creará los iconos necesarios para tu PWA.</p>
+    
+    <canvas id="iconCanvas" width="512" height="512"></canvas>
+    
+    <div class="download-section">
+        <button onclick="generateAllIcons()">Generar Todos los Iconos</button>
+        <button onclick="previewIcon()">Vista Previa</button>
+    </div>
+    
+    <div id="downloadLinks"></div>
+
+    <script>
+        function createIcon(size) {
+            const canvas = document.createElement('canvas');
+            canvas.width = size;
+            canvas.height = size;
+            const ctx = canvas.getContext('2d');
+            
+            // Crear gradiente
+            const gradient = ctx.createLinearGradient(0, 0, size, size);
+            gradient.addColorStop(0, '#667eea');
+            gradient.addColorStop(1, '#764ba2');
+            
+            // Fondo con bordes redondeados
+            const radius = size * 0.125; // 12.5% border radius
+            ctx.fillStyle = gradient;
+            ctx.beginPath();
+            ctx.roundRect(0, 0, size, size, radius);
+            ctx.fill();
+            
+            // Añadir iniciales
+            ctx.fillStyle = 'white';
+            ctx.font = `bold ${size * 0.35}px 'Inter', Arial, sans-serif`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('AA', size / 2, size / 2);
+            
+            return canvas;
+        }
+        
+        function downloadCanvas(canvas, filename) {
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL('image/png');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+        
+        function generateAllIcons() {
+            const sizes = [72, 96, 128, 144, 152, 192, 384, 512];
+            const downloadDiv = document.getElementById('downloadLinks');
+            downloadDiv.innerHTML = '<h3>Descargando iconos...</h3>';
+            
+            sizes.forEach((size, index) => {
+                setTimeout(() => {
+                    const canvas = createIcon(size);
+                    const filename = `icon-${size}x${size}.png`;
+                    downloadCanvas(canvas, filename);
+                    
+                    const link = document.createElement('p');
+                    link.textContent = `✓ Descargado: ${filename}`;
+                    downloadDiv.appendChild(link);
+                    
+                    if (index === sizes.length - 1) {
+                        const complete = document.createElement('p');
+                        complete.innerHTML = '<strong>✅ ¡Todos los iconos han sido generados!</strong><br>Mueve los archivos descargados a la carpeta "images/" de tu proyecto.';
+                        complete.style.color = 'green';
+                        downloadDiv.appendChild(complete);
+                    }
+                }, index * 500);
+            });
+        }
+        
+        function previewIcon() {
+            const canvas = document.getElementById('iconCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Limpiar canvas
+            ctx.clearRect(0, 0, 512, 512);
+            
+            // Crear vista previa del icono de 512x512
+            const iconCanvas = createIcon(512);
+            ctx.drawImage(iconCanvas, 0, 0);
+        }
+        
+        // Polyfill para roundRect si no está disponible
+        if (!CanvasRenderingContext2D.prototype.roundRect) {
+            CanvasRenderingContext2D.prototype.roundRect = function(x, y, w, h, r) {
+                if (w < 2 * r) r = w / 2;
+                if (h < 2 * r) r = h / 2;
+                this.beginPath();
+                this.moveTo(x + r, y);
+                this.arcTo(x + w, y, x + w, y + h, r);
+                this.arcTo(x + w, y + h, x, y + h, r);
+                this.arcTo(x, y + h, x, y, r);
+                this.arcTo(x, y, x + w, y, r);
+                this.closePath();
+            };
+        }
+        
+        // Mostrar vista previa al cargar
+        window.onload = previewIcon;
+    </script>
+</body>
+</html>

@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ariel Arnedo - Sr Software Developer</title>
+    <meta name="description" content="Portafolio profesional de Ariel Arnedo, Ingeniero de Sistemas y Sr Software Developer">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2c3e50">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/icon-192x192.png">
+    <link rel="apple-touch-icon" href="images/icon-192x192.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <button class="lang-btn active" data-lang="es">
+            <i class="fas fa-globe"></i>
+            ES
+        </button>
+        <button class="lang-btn" data-lang="en">
+            <i class="fas fa-globe"></i>
+            EN
+        </button>
+    </div>
+
+    <main class="portfolio-container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="profile-image-container">
+                    <img src="images/foto_profile.jpeg" alt="Ariel Arnedo" class="profile-image">
+                    <div class="profile-border"></div>
+                </div>
+                
+                <div class="hero-text">
+                    <h1 class="hero-name">ARIEL ARNEDO</h1>
+                    <h2 class="hero-role" data-es="SR SOFTWARE DEVELOPER" data-en="SR SOFTWARE DEVELOPER">SR SOFTWARE DEVELOPER</h2>
+                    
+                    <div class="hero-description">
+                        <p data-es="Ingeniero de Sistemas con experiencia en desarrollo y diseño de software. Especializado en Java, Spring Boot, arquitecturas distribuidas y servicios en la nube." 
+                           data-en="Systems Engineer with experience in software development and design. Specialized in Java, Spring Boot, distributed architectures and cloud services.">
+                           Ingeniero de Sistemas con experiencia en desarrollo y diseño de software. Especializado en Java, Spring Boot, arquitecturas distribuidas y servicios en la nube.
+                        </p>
+                    </div>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">6+</span>
+                            <span class="stat-label" data-es="Años de experiencia" data-en="Years of experience">Años de experiencia</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">12+</span>
+                            <span class="stat-label" data-es="Proyectos completados" data-en="Completed projects">Proyectos completados</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label" data-es="Empresas" data-en="Companies">Empresas</span>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-buttons">
+                        <button class="cta-button" onclick="scrollToSection('resumen_cv')">
+                            <i class="fas fa-file-alt"></i>
+                            <span data-es="Ver resumen de CV" data-en="View CV summary">Ver resumen de CV</span>
+                        </button>
+                        
+                        <div class="social-buttons">
+                            <a href="https://github.com/ArielJoseArnedo" target="_blank" rel="noopener noreferrer" class="social-button github">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </a>
+                            <a href="https://www.linkedin.com/in/arieljose55/" target="_blank" rel="noopener noreferrer" class="social-button linkedin">
+                                <i class="fab fa-linkedin"></i>
+                                LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-background">
+                <div class="geometric-shapes">
+                    <div class="shape shape-1"></div>
+                    <div class="shape shape-2"></div>
+                    <div class="shape shape-3"></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Info Bar -->
+        <section class="contact-bar">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>ariel_arnedo@outlook.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+57 3003913983</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Cartagena, Colombia</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-id-card"></i>
+                    <span>T.P: 031122-0750630 BLV</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Detailed CV Section -->
+    <section id="resumen_cv" class="cv-section">
+        <div class="cv-container">
+            <header class="cv-header">
+                <button class="back-button" onclick="scrollToSection('hero-section')">
+                    <i class="fas fa-arrow-left"></i>
+                    <span data-es="Volver al inicio" data-en="Back to top">Volver al inicio</span>
+                </button>
+                <h1 data-es="Currículum Vitae" data-en="Curriculum Vitae">Currículum Vitae</h1>
+                <p class="cv-subtitle" data-es="Resumen profesional detallado" data-en="Detailed professional summary">Resumen profesional detallado</p>
+            </header>
+
+            <!-- Professional Profile -->
+            <section class="cv-section-block">
+                <h2 class="section-title">
+                    <i class="fas fa-user-tie"></i>
+                    <span data-es="Perfil Profesional" data-en="Professional Profile">Perfil Profesional</span>
+                </h2>
+                
+                <div class="profile-grid">
+                    <div class="profile-card">
+                        <h3>Profesión</h3>
+                        <p class="profession-title">Ingeniería de sistemas</p>
+                    </div>
+                    
+                    <div class="profile-card full-width">
+                        <h3>Descripción del Perfil</h3>
+                        <p>Ingeniero de Sistemas con experiencia y formación en desarrollo y diseño de software. Apasionado por implementar buenas prácticas de programación para conseguir software de alta calidad aplicando patrones de diseño y código limpio. Ha participado en desarrollos front-end y back-end en equipos de trabajo auto-organizados basados en el marco metodológico SCRUM. Es una persona proactiva y orientada al detalle. Su experiencia ha sido principalmente con Java, Spring Boot, Play-Framework. Ha colaborado estrechamente con equipos frontend, integrado servicios de terceros y diseñado estructuras de bases de datos en entornos como PostgresSQL, DynamoDB, entre otros. Su capacidad para implementar lógica de negocio, realizar pruebas exhaustivas y mantener una documentación clara destaca su compromiso con la calidad y la eficiencia en cada proyecto.</p>
+                    </div>
+                    
+                    <div class="profile-card">
+                        <h3>Experiencia Laboral</h3>
+                        <p class="experience-years">6+ años</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technical Skills -->
+            <section class="cv-section-block">
+                <h2 class="section-title">
+                    <i class="fas fa-code"></i>
+                    <span data-es="Conocimientos Técnicos" data-en="Technical Skills">Conocimientos Técnicos</span>
+                </h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Backend & Frameworks</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">Spring Boot</span>
+                            <span class="skill-tag">Play Framework</span>
+                            <span class="skill-tag">Webflux</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Build Tools & Testing</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Gradle</span>
+                            <span class="skill-tag">Maven</span>
+                            <span class="skill-tag">JUnit</span>
+                            <span class="skill-tag">Mockito</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Databases</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">Oracle</span>
+                            <span class="skill-tag">DynamoDB</span>
+                            <span class="skill-tag">MongoDB</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Cloud & AWS</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">AWS EKS</span>
+                            <span class="skill-tag">AWS API Gateway</span>
+                            <span class="skill-tag">AWS SNS</span>
+                            <span class="skill-tag">AWS SQS</span>
+                            <span class="skill-tag">AWS CloudWatch</span>
+                            <span class="skill-tag">AWS ECS</span>
+                            <span class="skill-tag">AWS Cognito</span>
+                            <span class="skill-tag">AWS Parameter Store</span>
+                            <span class="skill-tag">AWS Secret Manager</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Security & Auth</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Criptografía (RSA, AES, JWT)</span>
+                            <span class="skill-tag">OpenId Connect</span>
+                            <span class="skill-tag">OAuth2</span>
+                            <span class="skill-tag">Keycloak</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Architecture & Messaging</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Arquitectura Hexagonal</span>
+                            <span class="skill-tag">Arquitectura EDA</span>
+                            <span class="skill-tag">CQRS</span>
+                            <span class="skill-tag">BIAN</span>
+                            <span class="skill-tag">RabbitMQ</span>
+                            <span class="skill-tag">Apache Kafka</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>DevOps & CI/CD</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Jenkins</span>
+                            <span class="skill-tag">Azure Pipelines</span>
+                            <span class="skill-tag">Kubernetes</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section class="cv-section-block">
+                <h2 class="section-title">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span data-es="Información Académica" data-en="Academic Information">Información Académica</span>
+                </h2>
+                <div class="education-grid">
+                    <div class="education-card">
+                        <div class="education-type">Pre-grado</div>
+                        <h3>Ingeniero de Sistemas</h3>
+                        <p class="institution">Universidad de Cartagena</p>
+                        <div class="education-details">
+                            <span class="country">Colombia</span>
+                            <span class="year">2021</span>
+                        </div>
+                    </div>
+                    <div class="education-card">
+                        <div class="education-type">Bachillerato</div>
+                        <h3>Bachiller Técnico</h3>
+                        <p class="institution">Inetit</p>
+                        <div class="education-details">
+                            <span class="country">Colombia</span>
+                            <span class="year">2008</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Certifications -->
+            <section class="cv-section-block">
+                <h2 class="section-title">
+                    <i class="fas fa-certificate"></i>
+                    <span data-es="Certificaciones y Cursos" data-en="Certifications & Courses">Certificaciones y Cursos</span>
+                </h2>
+                <div class="certifications-grid">
+                    <div class="certification-card">
+                        <div class="cert-provider">Microsoft</div>
+                        <h3>Aceleración del desarrollo de aplicaciones mediante GitHub Copilot</h3>
+                        <p class="cert-description">Certificación en el uso avanzado de GitHub Copilot para acelerar el desarrollo de software, mejorando la productividad y calidad del código.</p>
+                        <div class="cert-skills">
+                            <span class="cert-skill">GitHub Copilot</span>
+                            <span class="cert-skill">AI-Assisted Development</span>
+                            <span class="cert-skill">Code Generation</span>
+                        </div>
+                    </div>
+                    
+                    <div class="certification-card">
+                        <div class="cert-provider">Microsoft</div>
+                        <h3>Aspectos básicos de Microsoft Azure</h3>
+                        <p class="cert-description">Fundamentos de los servicios en la nube de Microsoft Azure, incluyendo conceptos básicos de cloud computing y servicios principales.</p>
+                        <div class="cert-skills">
+                            <span class="cert-skill">Microsoft Azure</span>
+                            <span class="cert-skill">Cloud Computing</span>
+                            <span class="cert-skill">Azure Services</span>
+                        </div>
+                    </div>
+                    
+                    <div class="certification-card">
+                        <div class="cert-provider">Udemy</div>
+                        <h3>Software Architecture & Design of Modern Large Scale Systems</h3>
+                        <p class="cert-description">Diseño y arquitectura de sistemas de gran escala, patrones de diseño, microservicios y mejores prácticas para sistemas distribuidos.</p>
+                        <div class="cert-skills">
+                            <span class="cert-skill">Software Architecture</span>
+                            <span class="cert-skill">System Design</span>
+                            <span class="cert-skill">Microservices</span>
+                            <span class="cert-skill">Scalability</span>
+                        </div>
+                    </div>
+                    
+                    <div class="certification-card">
+                        <div class="cert-provider">Udemy</div>
+                        <h3>Spring Framework 6 & Spring Boot 3</h3>
+                        <p class="cert-description">Curso completo sobre las últimas versiones de Spring Framework y Spring Boot, incluyendo nuevas características y mejores prácticas.</p>
+                        <div class="cert-skills">
+                            <span class="cert-skill">Spring Framework 6</span>
+                            <span class="cert-skill">Spring Boot 3</span>
+                            <span class="cert-skill">Java 17+</span>
+                            <span class="cert-skill">Reactive Programming</span>
+                        </div>
+                    </div>
+                    
+                    <div class="certification-card">
+                        <div class="cert-provider">Udemy</div>
+                        <h3>Guía Completa JUnit y Mockito Spring Boot Test</h3>
+                        <p class="cert-description">Testing avanzado en aplicaciones Spring Boot utilizando JUnit 5, Mockito y otras herramientas de testing para garantizar la calidad del software.</p>
+                        <div class="cert-skills">
+                            <span class="cert-skill">JUnit 5</span>
+                            <span class="cert-skill">Mockito</span>
+                            <span class="cert-skill">Spring Boot Test</span>
+                            <span class="cert-skill">Test-Driven Development</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="certifications-footer">
+                    <a href="https://drive.google.com/drive/folders/1_D21ZcAeUiIntfpBKj3JaNpYXTP4m-SK?usp=sharing" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="cert-button">
+                        <i class="fas fa-external-link-alt"></i>
+                        <span data-es="Ver más certificaciones" data-en="View more certifications">Ver más certificaciones</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Work Experience -->
+            <section class="cv-section-block">
+                <h2 class="section-title">
+                    <i class="fas fa-briefcase"></i>
+                    <span data-es="Experiencia Laboral" data-en="Work Experience">Experiencia Laboral</span>
+                </h2>
+                <p class="experience-summary">
+                    <span data-es="Tiempo total de experiencia: " data-en="Total experience time: ">Tiempo total de experiencia: </span>
+                    <strong data-es="6 años - 8 meses" data-en="6 years - 8 months">6 años - 8 meses</strong>
+                </p>
+                
+                <div class="timeline">
+                    <!-- DEVSU LLC -->
+                    <div class="timeline-item">
+                        <div class="timeline-date">2025-Actual</div>
+                        <div class="timeline-content">
+                            <div class="company-header">
+                                <h3>DEVSU LLC</h3>
+                                <span class="position">Sr Java Developer</span>
+                                <span class="duration">Feb 2025 - Actualidad</span>
+                            </div>
+                            <p class="project-description">
+                                <strong>Cliente: Banco Pichincha Ecuador S.A.</strong><br>
+                                Desarrollo del motor de tokenización de tarjetas digitales y físicas en las diferentes wallet del mercado (Apple Pay y Google Pay) del Banco Pichincha. El proyecto involucra la implementación de soluciones seguras para la tokenización de medios de pago, integrando con los principales proveedores de wallets digitales y garantizando el cumplimiento de estándares de seguridad financiera.
+                            </p>
+                            <div class="project-features">
+                                <ul>
+                                    <li>Desarrollo del motor de tokenización para tarjetas digitales y físicas</li>
+                                    <li>Integración con Apple Pay y Google Pay wallets</li>
+                                    <li>Implementación de estándares de seguridad financiera</li>
+                                    <li>Arquitectura escalable en entornos cloud</li>
+                                    <li>Testing automatizado y monitoreo continuo</li>
+                                </ul>
+                            </div>
+                            <div class="technologies">
+                                <span class="tech-tag">Java 21</span>
+                                <span class="tech-tag">Spring Boot 3 MVC</span>
+                                <span class="tech-tag">Webflux</span>
+                                <span class="tech-tag">JUnit 5</span>
+                                <span class="tech-tag">AWS</span>
+                                <span class="tech-tag">Mockito</span>
+                                <span class="tech-tag">APIM Manager</span>
+                                <span class="tech-tag">OpenId Connect</span>
+                                <span class="tech-tag">Maven</span>
+                                <span class="tech-tag">Gradle</span>
+                                <span class="tech-tag">Azure Pipeline</span>
+                                <span class="tech-tag">Azure Cloud</span>
+                                <span class="tech-tag">Karate</span>
+                                <span class="tech-tag">Kubernetes</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">Dynatrace</span>
+                                <span class="tech-tag">OpenShift 4</span>
+                                <span class="tech-tag">MCP</span>
+                                <span class="tech-tag">Copilot</span>
+                                <span class="tech-tag">N8N</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PRAGMA -->
+                    <div class="timeline-item">
+                        <div class="timeline-date">2024-2025</div>
+                        <div class="timeline-content">
+                            <div class="company-header">
+                                <h3>PRAGMA</h3>
+                                <span class="position">Software Developer</span>
+                                <span class="duration">Jun 2024 - Feb 2025</span>
+                            </div>
+                            <p class="project-description">
+                                <strong>Plataforma Integral de Gestión para Transer S.A.</strong><br>
+                                Desarrollo de una plataforma tecnológica integral para empresa colombiana del sector transporte especializada en viajes y carga de mercancías. La solución centraliza y automatiza los principales procesos operativos y administrativos de la compañía.
+                            </p>
+                            <div class="project-features">
+                                <ul>
+                                    <li>Gestión eficiente de viajes y servicios desde programación hasta ejecución</li>
+                                    <li>Control detallado de activos (camiones, tráileres y vehículos)</li>
+                                    <li>Administración de conductores con asignación a rutas y seguimiento</li>
+                                    <li>Sistema robusto de facturación con trazabilidad completa</li>
+                                    <li>Sistema de inventario para control de repuestos y suministros</li>
+                                </ul>
+                            </div>
+                            <p><strong>Logro destacado:</strong> Correcta configuración y puesta a producción de un Open-source IAM (Keycloak)</p>
+                            <div class="technologies">
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">Spring Boot 3 MVC</span>
+                                <span class="tech-tag">Webflux</span>
+                                <span class="tech-tag">JUnit 5</span>
+                                <span class="tech-tag">AWS</span>
+                                <span class="tech-tag">Mockito</span>
+                                <span class="tech-tag">Keycloak</span>
+                                <span class="tech-tag">OpenId Connect</span>
+                                <span class="tech-tag">Maven</span>
+                                <span class="tech-tag">Azure Pipeline</span>
+                                <span class="tech-tag">AWS SNS</span>
+                                <span class="tech-tag">AWS SQS</span>
+                                <span class="tech-tag">CloudWatch</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- EPAM SYSTEMS -->
+                    <div class="timeline-item">
+                        <div class="timeline-date">2021-2024</div>
+                        <div class="timeline-content">
+                            <div class="company-header">
+                                <h3>EPAM SYSTEMS</h3>
+                                <span class="position">Software Developer</span>
+                                <span class="duration">Dic 2021 - Mar 2024</span>
+                            </div>
+                            <p class="project-description">
+                                <strong>Qiip - Plataforma de Coaching Financiero</strong><br>
+                                Desarrollo de una plataforma digital orientada al coaching y asesoría financiera personalizada para el sector financiero. La solución permite consultar score crediticio, recibir orientación financiera adaptada y acceder a productos financieros alineados con metas personales.
+                            </p>
+                            <div class="technologies">
+                                <span class="tech-tag">Java 17</span>
+                                <span class="tech-tag">Spring Boot</span>
+                                <span class="tech-tag">PlayFramework</span>
+                                <span class="tech-tag">Kubernetes</span>
+                                <span class="tech-tag">Flutter</span>
+                                <span class="tech-tag">AWS SNS/SQS</span>
+                                <span class="tech-tag">CQRS</span>
+                                <span class="tech-tag">Arquitectura Hexagonal</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">DynamoDB</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">Gradle</span>
+                                <span class="tech-tag">Azure Pipelines</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- S4N -->
+                    <div class="timeline-item">
+                        <div class="timeline-date">2019-2021</div>
+                        <div class="timeline-content">
+                            <div class="company-header">
+                                <h3>S4N</h3>
+                                <span class="position">Java Software Developer</span>
+                                <span class="duration">Abr 2019 - Nov 2021</span>
+                            </div>
+                            <p class="project-description">
+                                <strong>Sistema de Autenticación Biométrica</strong><br>
+                                Desarrollo de soluciones tecnológicas para clientes del sector público y privado, con enfoque en un sistema de autenticación y autorización biométrica que integra huellas digitales para validar identidad de usuarios con altos niveles de seguridad y trazabilidad.
+                            </p>
+                            <div class="technologies">
+                                <span class="tech-tag">PlayFramework</span>
+                                <span class="tech-tag">Spring Boot</span>
+                                <span class="tech-tag">Java 8/11</span>
+                                <span class="tech-tag">Oracle</span>
+                                <span class="tech-tag">Clean Architecture</span>
+                                <span class="tech-tag">DDD</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CEIBA SOFTWARE -->
+                    <div class="timeline-item">
+                        <div class="timeline-date">2019</div>
+                        <div class="timeline-content">
+                            <div class="company-header">
+                                <h3>CEIBA SOFTWARE</h3>
+                                <span class="position">Software Developer</span>
+                                <span class="duration">Ene 2019 - Abr 2019</span>
+                            </div>
+                            <p class="project-description">
+                                <strong>Sistema de Gestión de Cultivos de Flores</strong><br>
+                                Desarrollo de un sistema integral para el sector floricultor, enfocado en digitalizar y optimizar procesos de gestión de cultivos, manejo de materias primas, insumos agrícolas, inventarios, compras y ventas.
+                            </p>
+                            <div class="technologies">
+                                <span class="tech-tag">Spring Boot</span>
+                                <span class="tech-tag">Java 11</span>
+                                <span class="tech-tag">AWS</span>
+                                <span class="tech-tag">SNS/SQS</span>
+                                <span class="tech-tag">Jenkins</span>
+                                <span class="tech-tag">AWS CloudWatch</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ACCENTURE -->
+                    <div class="timeline-item">
+                        <div class="timeline-date">2018-2019</div>
+                        <div class="timeline-content">
+                            <div class="company-header">
+                                <h3>ACCENTURE S.A.</h3>
+                                <span class="position">Software Developer</span>
+                                <span class="duration">Jun 2018 - Ene 2019</span>
+                            </div>
+                            <p class="project-description">
+                                <strong>Cliente Bancolombia - Testeo Funcional Automatizado</strong><br>
+                                Inicio de carrera profesional trabajando en la unidad de Transformación y Tecnología, específicamente en el área de testeo funcional automatizado. Participación en validación de funcionalidades clave de aplicaciones bancarias mediante automatización de pruebas funcionales.
+                            </p>
+                            <div class="technologies">
+                                <span class="tech-tag">Serenity</span>
+                                <span class="tech-tag">Java 8</span>
+                                <span class="tech-tag">Cucumber</span>
+                                <span class="tech-tag">BDD</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <script src="js/app.js"></script>
+    <script>
+        // Register service worker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
+</body>
+</html>
