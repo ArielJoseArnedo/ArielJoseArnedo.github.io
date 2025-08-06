@@ -313,6 +313,11 @@ function updateContent(language) {
                 element.placeholder = text;
             } else if (element.hasAttribute('title')) {
                 element.title = text;
+            } else if (element.tagName === 'TITLE') {
+                element.textContent = text;
+                document.title = text;
+            } else if (element.tagName === 'META' && element.getAttribute('name') === 'description') {
+                element.setAttribute('content', text);
             } else {
                 element.textContent = text;
             }
@@ -391,4 +396,96 @@ function updateSpecialContent(language) {
     
     // Update certification descriptions
     updateCertificationDescriptions(language);
+}
+
+function updateEducationDetails(language) {
+    const educationCards = document.querySelectorAll('.education-card');
+    const educationData = {
+        es: [
+            {
+                title: 'Ingeniero de Sistemas',
+                institution: 'Universidad de Cartagena',
+                country: 'Colombia',
+                year: '2021'
+            },
+            {
+                title: 'Bachiller Técnico',
+                institution: 'Inetit',
+                country: 'Colombia',
+                year: '2008'
+            }
+        ],
+        en: [
+            {
+                title: 'Systems Engineer',
+                institution: 'University of Cartagena',
+                country: 'Colombia',
+                year: '2021'
+            },
+            {
+                title: 'Technical High School Graduate',
+                institution: 'Inetit',
+                country: 'Colombia',
+                year: '2008'
+            }
+        ]
+    };
+    
+    educationCards.forEach((card, index) => {
+        if (educationData[language][index]) {
+            const data = educationData[language][index];
+            const title = card.querySelector('h3');
+            if (title) title.textContent = data.title;
+            
+            const institution = card.querySelector('.institution');
+            if (institution) institution.textContent = data.institution;
+        }
+    });
+}
+
+function updateWorkExperienceDescriptions(language) {
+    // This would be a comprehensive function to update all work experience descriptions
+    // For brevity, I'll add key translations here
+    const workDescriptions = {
+        es: {
+            devsu: 'Desarrollo del motor de tokenización de tarjetas digitales y físicas en las diferentes wallet del mercado (Apple Pay y Google Pay) del Banco Pichincha. El proyecto involucra la implementación de soluciones seguras para la tokenización de medios de pago, integrando con los principales proveedores de wallets digitales y garantizando el cumplimiento de estándares de seguridad financiera.',
+            pragma: 'Desarrollo de una plataforma tecnológica integral para empresa colombiana del sector transporte especializada en viajes y carga de mercancías. La solución centraliza y automatiza los principales procesos operativos y administrativos de la compañía.'
+        },
+        en: {
+            devsu: 'Development of the tokenization engine for digital and physical cards in different market wallets (Apple Pay and Google Pay) for Banco Pichincha. The project involves implementing secure solutions for payment method tokenization, integrating with major digital wallet providers and ensuring compliance with financial security standards.',
+            pragma: 'Development of a comprehensive technological platform for a Colombian company in the transportation sector specialized in travel and freight. The solution centralizes and automates the main operational and administrative processes of the company.'
+        }
+    };
+    
+    // Update specific descriptions (you can expand this based on needs)
+    const devsuDesc = document.querySelector('.timeline-item:first-child .project-description');
+    if (devsuDesc) {
+        devsuDesc.innerHTML = `<strong>${language === 'es' ? 'Cliente: Banco Pichincha Ecuador S.A.' : 'Client: Banco Pichincha Ecuador S.A.'}</strong><br>${workDescriptions[language].devsu}`;
+    }
+}
+
+function updateCertificationDescriptions(language) {
+    const certificationDescriptions = {
+        es: [
+            'Certificación en el uso avanzado de GitHub Copilot para acelerar el desarrollo de software, mejorando la productividad y calidad del código.',
+            'Fundamentos de los servicios en la nube de Microsoft Azure, incluyendo conceptos básicos de cloud computing y servicios principales.',
+            'Diseño y arquitectura de sistemas de gran escala, patrones de diseño, microservicios y mejores prácticas para sistemas distribuidos.',
+            'Curso completo sobre las últimas versiones de Spring Framework y Spring Boot, incluyendo nuevas características y mejores prácticas.',
+            'Testing avanzado en aplicaciones Spring Boot utilizando JUnit 5, Mockito y otras herramientas de testing para garantizar la calidad del software.'
+        ],
+        en: [
+            'Advanced certification in using GitHub Copilot to accelerate software development, improving code productivity and quality.',
+            'Fundamentals of Microsoft Azure cloud services, including basic cloud computing concepts and core services.',
+            'Design and architecture of large-scale systems, design patterns, microservices and best practices for distributed systems.',
+            'Complete course on the latest versions of Spring Framework and Spring Boot, including new features and best practices.',
+            'Advanced testing in Spring Boot applications using JUnit 5, Mockito and other testing tools to ensure software quality.'
+        ]
+    };
+    
+    const certDescriptions = document.querySelectorAll('.cert-description');
+    certDescriptions.forEach((desc, index) => {
+        if (certificationDescriptions[language][index]) {
+            desc.textContent = certificationDescriptions[language][index];
+        }
+    });
 }
