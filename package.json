@@ -9,7 +9,10 @@
     "build": "echo 'No build process needed for static PWA'",
     "test": "npx lighthouse http://localhost:8000 --output html --output-path lighthouse-report.html",
     "validate": "npx html-validate index.html",
-    "icons": "open icon-generator.html"
+    "icons": "open icon-generator.html",
+    "pdf": "open pdf-generator.html",
+    "pdf-node": "node generate-pdf.js",
+    "install-pdf": "npm install puppeteer"
   },
   "keywords": [
     "pwa",
@@ -31,6 +34,9 @@
     "http-server": "^14.1.1",
     "lighthouse": "^11.0.0",
     "html-validate": "^8.0.0"
+  },
+  "optionalDependencies": {
+    "puppeteer": "^21.0.0"
   },
   "engines": {
     "node": ">=14.0.0"

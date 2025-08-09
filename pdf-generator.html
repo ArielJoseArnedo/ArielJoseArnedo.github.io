@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de PDF - Portfolio Ariel Arnedo</title>
+    <style>
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            padding: 2rem;
+            background: #f8fafc;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        .button {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+        .instructions {
+            background: #e3f2fd;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid #2196f3;
+        }
+        .preview-frame {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        .status {
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            display: none;
+        }
+        .status.success {
+            background: #e8f5e8;
+            color: #2e7d32;
+            border-left: 4px solid #4caf50;
+        }
+        .status.error {
+            background: #ffebee;
+            color: #c62828;
+            border-left: 4px solid #f44336;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Generador de PDF - Portfolio</h1>
+        <p>Genera un PDF profesional de la primera sección del portfolio de Ariel Arnedo.</p>
+        
+        <div class="instructions">
+            <h3>📋 Instrucciones:</h3>
+            <ol>
+                <li><strong>Previsualizar:</strong> Haz clic en "Vista Previa" para ver cómo se verá el PDF</li>
+                <li><strong>Generar PDF:</strong> Haz clic en "Generar PDF" para abrir en nueva ventana</li>
+                <li><strong>Descargar:</strong> En la nueva ventana, usa Ctrl+P (Cmd+P en Mac) y selecciona "Guardar como PDF"</li>
+                <li><strong>Configuración recomendada:</strong>
+                    <ul>
+                        <li>Tamaño: A4</li>
+                        <li>Orientación: Vertical</li>
+                        <li>Márgenes: Mínimos</li>
+                        <li>Opciones: Incluir gráficos de fondo</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        
+        <div style="text-align: center;">
+            <button class="button" onclick="previewPDF()">
+                👁️ Vista Previa
+            </button>
+            <button class="button" onclick="generatePDF()">
+                📄 Generar PDF
+            </button>
+            <button class="button" onclick="downloadHTML()">
+                💾 Descargar HTML
+            </button>
+        </div>
+        
+        <div id="status" class="status"></div>
+        
+        <iframe id="preview" class="preview-frame" style="display: none;" src="about:blank"></iframe>
+        
+        <div style="margin-top: 2rem; padding: 1rem; background: #f5f5f5; border-radius: 8px;">
+            <h3>ℹ️ Información del PDF:</h3>
+            <ul>
+                <li><strong>Contenido:</strong> Primera sección del portfolio (Hero + Contacto)</li>
+                <li><strong>Botón modificado:</strong> "Ir a CV" que redirige a https://arieljosearnedo.github.io/</li>
+                <li><strong>Elementos incluidos:</strong> Foto de perfil, estadísticas, redes sociales, información de contacto</li>
+                <li><strong>Diseño:</strong> Optimizado para impresión con colores y gradientes preservados</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function showStatus(message, type = 'success') {
+            const status = document.getElementById('status');
+            status.textContent = message;
+            status.className = `status ${type}`;
+            status.style.display = 'block';
+            
+            setTimeout(() => {
+                status.style.display = 'none';
+            }, 5000);
+        }
+        
+        function previewPDF() {
+            const preview = document.getElementById('preview');
+            preview.src = 'portfolio-pdf.html';
+            preview.style.display = 'block';
+            showStatus('✅ Vista previa cargada. Revisa el contenido antes de generar el PDF.');
+        }
+        
+        function generatePDF() {
+            try {
+                // Abrir el archivo HTML en una nueva ventana optimizada para PDF
+                const newWindow = window.open('portfolio-pdf.html', '_blank', 'width=1200,height=800');
+                
+                if (newWindow) {
+                    showStatus('✅ Ventana abierta. Usa Ctrl+P (Cmd+P en Mac) para generar el PDF.');
+                    
+                    // Mostrar instrucciones después de un breve delay
+                    setTimeout(() => {
+                        const instructions = `
+                            🖨️ INSTRUCCIONES PARA GENERAR PDF:
+                            
+                            1. En la nueva ventana, presiona Ctrl+P (Windows) o Cmd+P (Mac)
+                            2. En "Destino" selecciona "Guardar como PDF"
+                            3. Configura:
+                               • Tamaño: A4
+                               • Orientación: Vertical
+                               • Márgenes: Mínimos
+                               • ✅ Incluir gráficos de fondo
+                            4. Haz clic en "Guardar"
+                            5. Nombre sugerido: "Ariel_Arnedo_Portfolio.pdf"
+                        `;
+                        
+                        if (confirm(instructions + '\n\n¿Deseas que se abra automáticamente el diálogo de impresión?')) {
+                            newWindow.focus();
+                            setTimeout(() => {
+                                newWindow.print();
+                            }, 1000);
+                        }
+                    }, 2000);
+                } else {
+                    showStatus('❌ Error: No se pudo abrir la ventana. Verifica que no esté bloqueada por el navegador.', 'error');
+                }
+            } catch (error) {
+                showStatus('❌ Error al generar PDF: ' + error.message, 'error');
+            }
+        }
+        
+        function downloadHTML() {
+            try {
+                // Crear un enlace de descarga para el archivo HTML
+                const link = document.createElement('a');
+                link.href = 'portfolio-pdf.html';
+                link.download = 'Ariel_Arnedo_Portfolio_Source.html';
+                link.click();
+                
+                showStatus('✅ Descarga iniciada. Puedes usar este archivo HTML para generar PDF offline.');
+            } catch (error) {
+                showStatus('❌ Error al descargar: ' + error.message, 'error');
+            }
+        }
+        
+        // Verificar si el archivo portfolio-pdf.html existe
+        window.onload = function() {
+            fetch('portfolio-pdf.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Archivo no encontrado');
+                    }
+                    showStatus('✅ Todo listo. El archivo portfolio-pdf.html está disponible.');
+                })
+                .catch(error => {
+                    showStatus('❌ Error: No se encontró el archivo portfolio-pdf.html. Verifica que esté en la misma carpeta.', 'error');
+                });
+        };
+    </script>
+</body>
+</html>
