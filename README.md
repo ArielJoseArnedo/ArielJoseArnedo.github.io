@@ -47,9 +47,13 @@ Alternativamente, puedes usar herramientas online como:
 ```
 my_cv/
 ├── index.html              # Página principal
+├── portfolio-pdf.html      # Versión optimizada para PDF
+├── pdf-generator.html      # Interfaz para generar PDF
+├── generate-pdf.js         # Script Node.js para PDF automático
 ├── manifest.json          # Manifiesto PWA
 ├── sw.js                  # Service Worker
 ├── generate-icons.html    # Generador de iconos
+├── icon-generator.html    # Generador mejorado de iconos
 ├── robots.txt            # SEO
 ├── css/
 │   └── styles.css        # Estilos principales
@@ -107,6 +111,45 @@ La aplicación está optimizada para:
 - ✅ Instalación nativa
 - ✅ Optimización SEO
 - ✅ Accesibilidad
+- ✅ Selector de idioma (ES/EN)
+- ✅ Generación de PDF
+
+### 📄 Generación de PDF
+
+Para generar un PDF de la primera sección del portfolio:
+
+#### **Método 1: Interfaz Web (Recomendado)**
+1. Abre `pdf-generator.html` en tu navegador
+2. Haz clic en "Vista Previa" para revisar el contenido
+3. Haz clic en "Generar PDF"
+4. En la nueva ventana, usa Ctrl+P (Cmd+P en Mac)
+5. Selecciona "Guardar como PDF" y configura:
+   - Tamaño: A4
+   - Orientación: Vertical
+   - Márgenes: Mínimos
+   - ✅ Incluir gráficos de fondo
+
+#### **Método 2: Node.js (Automático)**
+```bash
+# Instalar dependencias
+npm run install-pdf
+
+# Generar PDF automáticamente
+npm run pdf-node
+```
+
+#### **Método 3: Script NPM**
+```bash
+# Abrir generador web
+npm run pdf
+```
+
+**Características del PDF:**
+- ✅ Primera sección del portfolio optimizada para impresión
+- ✅ Botón "Ir a CV" enlaza a https://arieljosearnedo.github.io/
+- ✅ Conserva colores y gradientes
+- ✅ Incluye información de contacto y redes sociales
+- ✅ Foto de perfil y estadísticas profesionales
 
 ### 📱 Compatibilidad
 
